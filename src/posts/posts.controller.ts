@@ -8,8 +8,11 @@ import {
   Query,
   Delete,
 } from "@nestjs/common";
+import { ApiOperation, ApiTags } from "@nestjs/swagger";
+import { CreatePostDto } from "src/dto/create-post.dto";
 import { PostsService } from "./posts.service";
 
+@ApiTags('文章')
 @Controller("posts")
 export class PostsController {
   constructor(private readonly postsService: PostsService) {}
@@ -17,11 +20,13 @@ export class PostsController {
   /**
    * 创建文章
    */
+  @ApiOperation({summary: '创建文章'})
   @Post("save")
-  async create(@Body() post) {
+  async create(@Body() post: CreatePostDto) {
     return await this.postsService.create(post);
   }
 
+  @ApiOperation({summary: '获取文章列表'})
   @Get("find")
   async findAll(@Query() query) {
     return this.postsService.findAll(query);

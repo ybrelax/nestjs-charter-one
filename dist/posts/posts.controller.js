@@ -14,6 +14,8 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostsController = void 0;
 const common_1 = require("@nestjs/common");
+const swagger_1 = require("@nestjs/swagger");
+const create_post_dto_1 = require("../dto/create-post.dto");
 const posts_service_1 = require("./posts.service");
 let PostsController = class PostsController {
     constructor(postsService) {
@@ -36,13 +38,15 @@ let PostsController = class PostsController {
     }
 };
 __decorate([
+    (0, swagger_1.ApiOperation)({ summary: '创建文章' }),
     (0, common_1.Post)("save"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", [create_post_dto_1.CreatePostDto]),
     __metadata("design:returntype", Promise)
 ], PostsController.prototype, "create", null);
 __decorate([
+    (0, swagger_1.ApiOperation)({ summary: '获取文章列表' }),
     (0, common_1.Get)("find"),
     __param(0, (0, common_1.Query)()),
     __metadata("design:type", Function),
@@ -72,6 +76,7 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], PostsController.prototype, "delete", null);
 PostsController = __decorate([
+    (0, swagger_1.ApiTags)('文章'),
     (0, common_1.Controller)("posts"),
     __metadata("design:paramtypes", [posts_service_1.PostsService])
 ], PostsController);
