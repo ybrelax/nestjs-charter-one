@@ -24,7 +24,6 @@ let HttpExceptionFilter = class HttpExceptionFilter {
         else {
             message = `${status >= 500 ? "Server Error" : "Client Server"}`;
         }
-        console.log('response:', exceptionResponse);
         const errorResponse = {
             data: {},
             message,

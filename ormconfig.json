@@ -1,10 +1,10 @@
 {
   "type": "mysql",
-  "host": "rm-wz962qcv8kyrgb0545o.mysql.rds.aliyuncs.com",
-  "port": 1336,
-  "username": "yuekenode",
-  "password": "Yueke2020",
-  "database": "seeplus_node",
+  "host": "", 
+  "port": "",
+  "username": "",
+  "password": "",
+  "database": "",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
 }

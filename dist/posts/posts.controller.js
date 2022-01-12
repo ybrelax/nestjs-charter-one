@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PostsController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
-const create_post_dto_1 = require("../dto/create-post.dto");
+const create_post_dto_1 = require("./dto/create-post.dto");
 const posts_service_1 = require("./posts.service");
 let PostsController = class PostsController {
     constructor(postsService) {

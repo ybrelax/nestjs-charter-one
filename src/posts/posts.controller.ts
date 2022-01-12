@@ -9,7 +9,7 @@ import {
   Delete,
 } from "@nestjs/common";
 import { ApiOperation, ApiTags } from "@nestjs/swagger";
-import { CreatePostDto } from "src/dto/create-post.dto";
+import { CreatePostDto } from "./dto/create-post.dto";
 import { PostsService } from "./posts.service";
 
 @ApiTags('文章')
